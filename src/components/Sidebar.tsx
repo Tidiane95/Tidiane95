@@ -4,16 +4,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 import {
-  LayoutDashboard,
-  PlusCircle,
-  Clock,
-  Settings,
-  LogOut,
-  Users,
-  BarChart3,
-  ShieldCheck,
-  Bell,
-  ChevronRight,
+  LayoutDashboard, PlusCircle, Clock, Settings, LogOut,
+  Users, BarChart3, ShieldCheck, Bell, Gift, BookOpen,
 } from 'lucide-react'
 import Logo from './Logo'
 import type { User } from '@/types'
@@ -26,18 +18,20 @@ interface NavItem {
 }
 
 const employeeNav: NavItem[] = [
-  { label: 'Tableau de bord', href: '/dashboard', icon: LayoutDashboard },
-  { label: 'Nouvelle demande', href: '/request', icon: PlusCircle },
-  { label: 'Mes demandes', href: '/history', icon: Clock },
-  { label: 'Notifications', href: '/notifications', icon: Bell, badge: 2 },
+  { label: 'Tableau de bord',    href: '/dashboard',    icon: LayoutDashboard },
+  { label: 'Nouvelle demande',   href: '/request',      icon: PlusCircle },
+  { label: 'Mes demandes',       href: '/history',      icon: Clock },
+  { label: 'Bons d\'achat',      href: '/gift-cards',   icon: Gift },
+  { label: 'Bien-être financier',href: '/wellness',     icon: BookOpen },
+  { label: 'Notifications',      href: '/notifications',icon: Bell, badge: 2 },
 ]
 
 const adminNav: NavItem[] = [
-  { label: 'Tableau de bord', href: '/admin', icon: LayoutDashboard },
-  { label: 'Demandes', href: '/admin/requests', icon: Clock, badge: 3 },
-  { label: 'Employés', href: '/admin/employees', icon: Users },
-  { label: 'Statistiques', href: '/admin/stats', icon: BarChart3 },
-  { label: 'Paramètres', href: '/admin/settings', icon: ShieldCheck },
+  { label: 'Tableau de bord',    href: '/admin',              icon: LayoutDashboard },
+  { label: 'Demandes',           href: '/admin/requests',     icon: Clock, badge: 3 },
+  { label: 'Employés',           href: '/admin/employees',    icon: Users },
+  { label: 'Statistiques',       href: '/admin/stats',        icon: BarChart3 },
+  { label: 'Paramètres',         href: '/admin/settings',     icon: ShieldCheck },
 ]
 
 interface SidebarProps {
@@ -52,12 +46,8 @@ export default function Sidebar({ user, mobileOpen = false, onClose }: SidebarPr
 
   return (
     <>
-      {/* Mobile overlay */}
       {mobileOpen && (
-        <div
-          className="fixed inset-0 z-20 bg-black/40 lg:hidden"
-          onClick={onClose}
-        />
+        <div className="fixed inset-0 z-20 bg-black/40 lg:hidden" onClick={onClose} />
       )}
 
       <aside className={clsx(
@@ -76,15 +66,13 @@ export default function Sidebar({ user, mobileOpen = false, onClose }: SidebarPr
               {user.firstName[0]}{user.lastName[0]}
             </div>
             <div className="overflow-hidden">
-              <p className="font-semibold text-sm text-gray-900 truncate">
-                {user.firstName} {user.lastName}
-              </p>
+              <p className="font-semibold text-sm text-gray-900 truncate">{user.firstName} {user.lastName}</p>
               <p className="text-xs text-gray-500 truncate">{user.position}</p>
             </div>
           </div>
         </div>
 
-        {/* Navigation */}
+        {/* Nav */}
         <nav className="flex-1 px-3 py-4 overflow-y-auto">
           <p className="px-3 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
             {user.role === 'employee' ? 'Mon espace' : 'Administration'}
@@ -92,7 +80,9 @@ export default function Sidebar({ user, mobileOpen = false, onClose }: SidebarPr
           <ul className="space-y-1">
             {navItems.map((item) => {
               const Icon = item.icon
-              const isActive = pathname === item.href || (item.href !== '/dashboard' && item.href !== '/admin' && pathname.startsWith(item.href))
+              const isActive =
+                pathname === item.href ||
+                (item.href !== '/dashboard' && item.href !== '/admin' && pathname.startsWith(item.href))
 
               return (
                 <li key={item.href}>
@@ -100,13 +90,13 @@ export default function Sidebar({ user, mobileOpen = false, onClose }: SidebarPr
                     href={item.href}
                     onClick={onClose}
                     className={clsx(
-                      'flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-150 group',
+                      'flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-150',
                       isActive
                         ? 'bg-brand-600 text-white shadow-sm'
                         : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                     )}
                   >
-                    <Icon className="w-4.5 h-4.5 shrink-0" size={18} />
+                    <Icon size={18} className="shrink-0" />
                     <span className="flex-1">{item.label}</span>
                     {item.badge && (
                       <span className={clsx(
@@ -123,12 +113,10 @@ export default function Sidebar({ user, mobileOpen = false, onClose }: SidebarPr
           </ul>
 
           <div className="mt-6">
-            <p className="px-3 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">
-              Compte
-            </p>
+            <p className="px-3 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Compte</p>
             <Link
               href="/settings"
-              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all duration-150"
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition"
             >
               <Settings size={18} />
               <span className="flex-1">Paramètres</span>
@@ -140,7 +128,7 @@ export default function Sidebar({ user, mobileOpen = false, onClose }: SidebarPr
         <div className="px-3 py-4 border-t border-gray-100">
           <Link
             href="/"
-            className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-red-50 hover:text-red-600 transition-all duration-150"
+            className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-red-50 hover:text-red-600 transition"
           >
             <LogOut size={18} />
             <span>Se déconnecter</span>
