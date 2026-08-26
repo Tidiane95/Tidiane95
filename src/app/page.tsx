@@ -90,10 +90,10 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <Logo size="md" />
           <div className="hidden md:flex items-center gap-6 text-sm text-gray-600">
-            <a href="#fonctionnement" className="hover:text-brand-600 transition">Fonctionnement</a>
-            <a href="#avantages" className="hover:text-brand-600 transition">Avantages</a>
-            <a href="#employeurs" className="hover:text-brand-600 transition">Employeurs</a>
-            <a href="#temoignages" className="hover:text-brand-600 transition">Témoignages</a>
+            <a href="#fonctionnement" className="hover:text-brand-900 transition">Fonctionnement</a>
+            <a href="#avantages" className="hover:text-brand-900 transition">Avantages</a>
+            <a href="#employeurs" className="hover:text-brand-900 transition">Employeurs</a>
+            <a href="#temoignages" className="hover:text-brand-900 transition">Témoignages</a>
           </div>
           <div className="flex items-center gap-3">
             <Link href="/login" className="btn-secondary text-sm py-2 px-4">Connexion</Link>
@@ -103,7 +103,7 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-brand-800 text-white pt-20 pb-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-brand-900 via-brand-800 to-brand-950 text-white pt-20 pb-28">
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
           <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-white/5" />
           <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-gold-400/10" />
@@ -132,7 +132,7 @@ export default function LandingPage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link
                   href="/login"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-brand-700 font-bold rounded-xl hover:bg-gray-50 transition shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-brand-900 font-bold rounded-xl hover:bg-gray-50 transition shadow-lg hover:shadow-xl"
                 >
                   Accéder à mon salaire
                   <ArrowRight className="w-5 h-5" />
@@ -165,7 +165,7 @@ export default function LandingPage() {
                   <p className="text-xs font-semibold text-gray-500 mb-1">Salaire gagné aujourd&apos;hui</p>
                   <p className="text-3xl font-bold text-gray-900">553 846 <span className="text-lg text-gray-400">FCFA</span></p>
                   <div className="mt-3 h-2.5 bg-gray-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-brand-500 rounded-full" style={{ width: '77%' }} />
+                    <div className="h-full bg-brand-600 rounded-full" style={{ width: '77%' }} />
                   </div>
                   <div className="flex justify-between mt-1.5 text-xs text-gray-500">
                     <span>77% de la période écoulée</span>
@@ -174,7 +174,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Quick access */}
-                <div className="bg-brand-600 rounded-2xl p-5 text-white">
+                <div className="bg-brand-800 rounded-2xl p-5 text-white">
                   <p className="text-sm text-white/80 mb-1">Disponible maintenant</p>
                   <p className="text-2xl font-bold mb-3">210 000 FCFA</p>
                   <button className="w-full bg-white text-brand-700 font-semibold py-2.5 rounded-xl text-sm">
@@ -317,7 +317,7 @@ export default function LandingPage() {
                   <div className="hidden lg:block absolute top-7 left-full w-full h-px bg-gray-200 -translate-x-4 z-0" />
                 )}
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-brand-600 text-white font-bold text-xl flex items-center justify-center mb-4 shadow-md">
+                  <div className="w-14 h-14 rounded-2xl bg-brand-900 text-white font-bold text-xl flex items-center justify-center mb-4 shadow-md">
                     {s.num}
                   </div>
                   <h3 className="font-semibold text-gray-900 mb-2">{s.title}</h3>
@@ -334,7 +334,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-brand-50 text-brand-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-brand-50 text-brand-900 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
                 Pour les employeurs · Gratuit
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -352,7 +352,7 @@ export default function LandingPage() {
                   'Support dédié et ressources de communication',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-gray-700">
-                    <CheckCircle2 className="w-5 h-5 text-brand-500 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
@@ -369,15 +369,15 @@ export default function LandingPage() {
                 return (
                   <div key={b.label} className="card p-6 text-center hover:shadow-md transition-all">
                     <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mx-auto mb-3">
-                      <Icon className="w-6 h-6 text-brand-600" />
+                      <Icon className="w-6 h-6 text-brand-900" />
                     </div>
-                    <p className="text-3xl font-bold text-brand-600 mb-1">{b.stat}</p>
+                    <p className="text-3xl font-bold text-brand-900 mb-1">{b.stat}</p>
                     <p className="text-sm text-gray-600">{b.label}</p>
                   </div>
                 )
               })}
               <div className="col-span-2 card p-4 bg-brand-50 border-brand-100 text-center">
-                <p className="text-xs text-brand-700 font-medium">
+                <p className="text-xs text-brand-900 font-medium">
                   Données basées sur nos 150+ entreprises partenaires au Sénégal
                 </p>
               </div>
@@ -402,7 +402,7 @@ export default function LandingPage() {
                 </div>
                 <p className="text-gray-700 mb-5 leading-relaxed italic">&ldquo;{t.text}&rdquo;</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center text-white font-semibold text-sm">
+                  <div className="w-10 h-10 rounded-full bg-brand-900 flex items-center justify-center text-white font-semibold text-sm">
                     {t.name[0]}
                   </div>
                   <div>
@@ -417,14 +417,14 @@ export default function LandingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-brand-600">
+      <section className="py-20 bg-brand-900">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Prêt à transformer la paie de vos équipes ?</h2>
           <p className="text-xl text-white/80 mb-8">
             Rejoignez les 150+ entreprises qui font confiance à Di Allo Fintech.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/login" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-brand-700 font-bold rounded-xl hover:bg-gray-50 transition shadow-lg">
+            <Link href="/login" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-brand-900 font-bold rounded-xl hover:bg-gray-50 transition shadow-lg">
               Accéder à mon compte
               <ArrowRight className="w-5 h-5" />
             </Link>

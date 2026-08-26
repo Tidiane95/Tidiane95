@@ -8,7 +8,7 @@ interface LogoProps {
 
 export default function Logo({ variant = 'dark', size = 'md', showTagline = false }: LogoProps) {
   const textColor = variant === 'light' ? 'text-white' : 'text-gray-900'
-  const subColor = variant === 'light' ? 'text-green-200' : 'text-brand-600'
+  const subColor = variant === 'light' ? 'text-gold-300' : 'text-brand-900'
 
   const sizes = {
     sm: { icon: 'w-7 h-7 text-sm', title: 'text-base', sub: 'text-xs' },
@@ -26,7 +26,7 @@ export default function Logo({ variant = 'dark', size = 'md', showTagline = fals
         s.icon,
         variant === 'light'
           ? 'bg-white/20 text-white'
-          : 'bg-brand-600 text-white'
+          : 'bg-brand-900 text-white'
       )}>
         D
       </div>
